@@ -1,8 +1,10 @@
-package com.example.demo1;
+package com.example.demo1.Book;
 
 public class Book {
     private String name;
     private String author;
+
+    private String image;
 
     public String getName() {
         return name;
@@ -12,11 +14,19 @@ public class Book {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image=image;
+    }
+
     public String getAuthor() {
         return author;
     }
 
-    public void setArtist(String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 }
