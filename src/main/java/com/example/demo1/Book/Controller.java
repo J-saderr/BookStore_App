@@ -1,17 +1,11 @@
 package com.example.demo1.Book;
 
-import com.example.demo1.Book.Book;
-import com.example.demo1.Book.BookController;
-import javafx.event.ActionEvent;
+import com.example.demo1.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,10 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller extends MainController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
 
     @FXML
     private HBox recentlyReadingContainer;
@@ -113,20 +105,6 @@ public class Controller implements Initializable {
         RD.add(Book);
 
         return RD;
-    }
-    public void swichtoHome(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Home.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToLogin(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 }
 

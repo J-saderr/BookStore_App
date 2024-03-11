@@ -19,70 +19,53 @@
             <children>
                 <VBox prefHeight="126.0" prefWidth="235.0" spacing="10.0">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="selected" stylesheets="@../design/style.css">
-                            <children>
-                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <Button mnemonicParsing="false" onAction="#switchToHome" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Home" textFill="WHITE">
+                     <graphic>
+                                <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../drawable/ic_home.png" />
                                     </image>
                                 </ImageView>
-                                <Label prefHeight="21.0" prefWidth="101.0" text="Home" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                            <children>
-                                <Label prefHeight="21.0" prefWidth="101.0" text="Top Books" textFill="#a1a1a1">
-                                    <font>
-                                        <Font name="System Bold" size="18.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
-                    </children>
-                </VBox>
-                <VBox prefHeight="292.0" prefWidth="235.0">
-                    <children>
-                        <Label prefHeight="48.0" prefWidth="192.0" text="YOUR LIBRARY" textFill="#a1a1a1">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                        </Label>
-                        <Label prefHeight="40.0" prefWidth="192.0" text="Reading" textFill="#a1a1a1">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                        </Label>
-                        <Label prefHeight="40.0" prefWidth="192.0" text="Favourite" textFill="#a1a1a1">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
-                        </Label>
-                        <Label prefHeight="40.0" prefWidth="192.0" text="History" textFill="#a1a1a1">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                        </Label>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Top books" textFill="#a1a1a1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
                     </children>
-                    <padding>
-                        <Insets left="20.0" right="20.0" />
-                    </padding>
                 </VBox>
+            <VBox prefHeight="292.0" prefWidth="235.0">
+               <children>
+                  <Label prefHeight="48.0" prefWidth="192.0" text="YOUR LIBRARY" textFill="#a1a1a1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToReading" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Reading" textFill="#a1a1a1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPurchase" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="#a1a1a1">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </VBox>
                 <Label prefHeight="48.0" prefWidth="192.0" text="Your Sheves" textFill="#a1a1a1">
                     <font>
                         <Font size="18.0" />
@@ -124,7 +107,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                         <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0">
                      <children>
-                              <Button mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="120.0" styleClass="upgrade-button" stylesheets="@../design/style.css" text="Login" textFill="WHITE">
+                              <Button mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="120.0" styleClass="btn" stylesheets="@../design/style.css" text="Login" textFill="WHITE">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

@@ -13,9 +13,9 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Login.Login">
     <children>
-        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" styleClass="black-bg" stylesheets="@../design/style.css">
+        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" styleClass="primary_color" stylesheets="@../design/style.css">
             <children>
-                <AnchorPane fx:id="login_form" layoutX="349.0" layoutY="137.0" prefHeight="520.0" prefWidth="312.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="login_form" layoutX="349.0" layoutY="137.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="140.0">
                     <children>
                         <Label layoutX="93.0" layoutY="86.0" text="Sign In Account" textFill="#187778">
                             <font>
@@ -40,7 +40,7 @@
                         </Hyperlink>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="signup_form" layoutX="345.0" layoutY="122.0" prefHeight="520.0" prefWidth="312.0" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="signup_form" layoutX="345.0" layoutY="122.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
                     <children>
                         <Label layoutX="88.0" layoutY="74.0" text="Sign Up Account" textFill="#187778">
                             <font>
@@ -61,7 +61,7 @@
                         <TextField fx:id="signup_answer" layoutX="37.0" layoutY="287.0" prefHeight="30.0" prefWidth="237.0" promptText="Answer" styleClass="textfield" stylesheets="@../design/style.css" />
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="forgot_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" visible="false" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="forgot_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
                     <children>
                         <Label layoutX="86.0" layoutY="84.0" text="Forget Password" textFill="#187778">
                             <font>
@@ -74,7 +74,7 @@
                         <TextField fx:id="forgot_username" layoutX="37.0" layoutY="141.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" />
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="changePass_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0">
+                <AnchorPane fx:id="changePass_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0">
                     <children>
                         <Label layoutX="86.0" layoutY="84.0" text="Forget Password" textFill="#187778">
                             <font>
