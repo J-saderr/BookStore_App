@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.InputStream;
+
 public class BookController {
 
     @FXML
@@ -18,8 +20,21 @@ public class BookController {
     private Label author;
 
     public void setData(Book book){
-        Image image = new Image(getClass().getResourceAsStream(book.getImage()));
-        img.setImage(image);
+        try {
+            InputStream inputStream = getClass().getResourceAsStream(book.getImage());
+
+            if (inputStream != null) {
+                Image image = new Image(inputStream);
+                img.setImage(image);
+            } else {
+                System.err.println("Image not found: " + book.getImage());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error loading image: " + e.getMessage());
+        }
+
         bookName.setText(book.getName());
         author.setText(book.getAuthor());
     }

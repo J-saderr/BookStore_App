@@ -124,7 +124,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                         <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0">
                      <children>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" styleClass="upgrade-button" stylesheets="@../design/style.css" text="Login" textFill="WHITE">
+                              <Button mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="120.0" styleClass="upgrade-button" stylesheets="@../design/style.css" text="Login" textFill="WHITE">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
