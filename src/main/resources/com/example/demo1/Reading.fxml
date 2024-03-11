@@ -49,7 +49,7 @@
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Button>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToFavourite" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="#a1a1a1">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPurchase" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="#a1a1a1">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>

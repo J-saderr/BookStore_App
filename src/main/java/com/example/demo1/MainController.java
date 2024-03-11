@@ -36,6 +36,6 @@ public class MainController {
         stage.show();
     }
 
-    public void switchToPurchse(ActionEvent event) {
+    public void switchToPurchase(ActionEvent event) {
     }
 }
