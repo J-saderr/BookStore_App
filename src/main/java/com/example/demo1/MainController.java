@@ -26,6 +26,11 @@ public class MainController {
     }
 
     public void switchToTopBooks(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Search.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void switchToReading(ActionEvent event) throws Exception{
@@ -36,6 +41,11 @@ public class MainController {
         stage.show();
     }
 
-    public void switchToPurchase(ActionEvent event) {
+    public void switchToPurchase(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Purchase.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

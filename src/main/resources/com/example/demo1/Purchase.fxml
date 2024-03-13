@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="primary_color" stylesheets="@../design/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Book.PurchaseController">
+    <left>
+        <VBox prefHeight="200.0" prefWidth="235.0" spacing="20.0" styleClass="secondary-color" stylesheets="@../design/style.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="126.0" prefWidth="235.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#switchToHome" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Home" textFill="#a1a1a1">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Top books" textFill="#a1a1a1">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox prefHeight="292.0" prefWidth="235.0">
+                    <children>
+                        <Label prefHeight="48.0" prefWidth="192.0" text="YOUR LIBRARY" textFill="#a1a1a1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </Label>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToReading" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Reading" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Button>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPurchase" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="#a1a1a1">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </VBox>
+                <Label prefHeight="48.0" prefWidth="192.0" text="Your Sheves" textFill="#a1a1a1">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Pane prefHeight="12.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="top-border" stylesheets="@../design/style.css">
+                    <children>
+                        <Label prefHeight="40.0" prefWidth="120.0" text="Create a shell" textFill="#a1a1a1">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="800.0" prefWidth="879.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1080.0" spacing="20.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="215.0" styleClass="search-container" stylesheets="@../design/style.css">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../../../../Documents/Project/kisspng-computer-icons-magnifying-glass-search-box-locate-5ad994d22f2d63.0982933915242088501933.jpg" />
+                                    </image>
+                                </ImageView>
+                                <TextField prefHeight="31.0" prefWidth="173.0" promptText="Search" style="-fx-background-color: transparent;" />
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0" />
+                    </children>
+                </HBox>
+            <AnchorPane fx:id="purchase_form" prefHeight="555.0" prefWidth="815.0">
+               <children>
+                  <AnchorPane layoutX="13.0" layoutY="16.0" prefHeight="654.0" prefWidth="806.0" stylesheets="@../design/style.css">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane prefHeight="214.0" prefWidth="874.0" stylesheets="@../design/style.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="68.0" layoutY="27.0" text="Book ID:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="purchase_bookID" layoutX="134.0" layoutY="23.0" onAction="#purchaseBookId" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@../design/style.css" />
+                              <Label layoutX="55.0" layoutY="65.0" text="Book Title:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="purchase_bookTitle" layoutX="134.0" layoutY="61.0" onAction="#purchaseBookTitle" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@../design/style.css" />
+                              <Spinner fx:id="purchase_quantity" layoutX="135.0" layoutY="95.0" onMouseClicked="#purhcaseQty" prefHeight="25.0" prefWidth="94.0" />
+                              <Label layoutX="284.0" layoutY="166.0" text="Total: " textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="purchase_total" layoutX="335.0" layoutY="168.0" prefHeight="23.0" prefWidth="127.0" text="\$0.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="purchase_addBtn" layoutX="313.0" layoutY="26.0" mnemonicParsing="false" onAction="#purchaseAdd" prefHeight="37.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../design/style.css" text="Add" />
+                              <AnchorPane layoutX="492.0" prefHeight="214.0" prefWidth="299.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="23.0" text="Book ID: " textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="31.0" layoutY="58.0" text="Book Title:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_bookTItle" layoutX="108.0" layoutY="58.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="54.0" layoutY="97.0" text="Author:" textFill="WHITE" AnchorPane.topAnchor="91.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_author" layoutX="108.0" layoutY="87.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css" AnchorPane.topAnchor="92.0">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="57.0" layoutY="126.0" text="Genre:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_genre" layoutX="108.0" layoutY="126.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="34.0" layoutY="159.0" text="Pub Date:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_date" layoutX="108.0" layoutY="159.0" prefHeight="20.0" prefWidth="153.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                       <font>
+                                          <Font name="Arial" size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="purchase_payBtn" layoutX="81.0" layoutY="166.0" mnemonicParsing="false" onAction="#purchasePay" prefHeight="34.0" prefWidth="165.0" styleClass="add-btn" stylesheets="@../design/style.css" text="Pay" />
+                              <Label layoutX="62.0" layoutY="99.0" text="Quantity:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="purchase_tableView" layoutX="12.0" layoutY="232.0" prefHeight="420.0" prefWidth="801.0">
+                           <columns>
+                              <TableColumn fx:id="purchase_col_bookID" prefWidth="75.0" text="Book ID" />
+                              <TableColumn fx:id="purchase_col_bookTitle" prefWidth="174.0" text="Book Title" />
+                              <TableColumn fx:id="purchase_col_author" minWidth="8.0" prefWidth="149.0" text="Author" />
+                              <TableColumn fx:id="purchase_col_genre" minWidth="8.0" prefWidth="186.0" text="Genre" />
+                              <TableColumn fx:id="purchase_col_quantity" minWidth="8.0" prefWidth="89.81451416015625" text="Quantity" />
+                              <TableColumn fx:id="purchase_col_price" minWidth="8.0" prefWidth="126.00006103515625" text="Price ($)" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
