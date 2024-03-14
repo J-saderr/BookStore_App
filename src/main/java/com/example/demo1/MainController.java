@@ -42,10 +42,10 @@ public class MainController {
     }
 
     public void switchToPurchase(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Purchase.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+//        Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Purchase.fxml"));
+//        scene = new Scene(root);
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        stage.setScene(scene);
+//        stage.show();
     }
 }

@@ -51,14 +51,13 @@
                         <TextField fx:id="signup_username" layoutX="39.0" layoutY="155.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" styleClass="textfield" stylesheets="@../design/style.css" />
                         <PasswordField fx:id="signup_password" layoutX="39.0" layoutY="197.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" />
                         <PasswordField fx:id="signup_cPassword" layoutX="37.0" layoutY="240.0" prefHeight="30.0" prefWidth="237.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <Button fx:id="signup_btn" layoutX="37.0" layoutY="335.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Sign Up" />
-                        <Label layoutX="110.0" layoutY="443.0" text="Sign In Account">
+                        <Button fx:id="signup_btn" layoutX="37.0" layoutY="294.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Sign Up" />
+                        <Label layoutX="110.0" layoutY="443.0" text="Sign In Account" textFill="WHITE">
                             <font>
                                 <Font name="Gill Sans MT" size="15.0" />
                             </font>
                         </Label>
                         <Button fx:id="signup_loginAccount" layoutX="38.0" layoutY="476.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Login Account" />
-                        <TextField fx:id="signup_answer" layoutX="37.0" layoutY="287.0" prefHeight="30.0" prefWidth="237.0" promptText="Answer" styleClass="textfield" stylesheets="@../design/style.css" />
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="forgot_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
@@ -68,8 +67,7 @@
                                 <Font name="Gill Sans MT" size="20.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="forgot_answer" layoutX="38.0" layoutY="183.0" prefHeight="30.0" prefWidth="237.0" promptText="Answer" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <Button fx:id="forgot_proceedBtn" layoutX="38.0" layoutY="230.0" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Proceed" />
+                        <Button fx:id="forgot_proceedBtn" layoutX="38.0" layoutY="192.0" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Proceed" />
                         <Button fx:id="forgot_backBtn" layoutX="37.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Back" />
                         <TextField fx:id="forgot_username" layoutX="37.0" layoutY="141.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" />
                     </children>
