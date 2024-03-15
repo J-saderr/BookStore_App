@@ -1,9 +1,11 @@
 package com.example.demo1.Book;
 
+import com.example.demo1.Login.getData;
 import com.example.demo1.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -21,14 +23,21 @@ public class Controller extends MainController implements Initializable {
 
     @FXML
     private HBox favoriteContainer;
+    @FXML
+    private Label username;
 
     List<Book> recentlyReading;
     List<Book> favorites;
-
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         recentlyReading = new ArrayList<>(getrecentlyReading());
         favorites = new ArrayList<>(getFavorites());
+        displayUsername();
 
 //        try {
         for (Book book : recentlyReading) {
@@ -64,19 +73,19 @@ public class Controller extends MainController implements Initializable {
         List<Book> RD = new ArrayList<>();
 
         Book Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);
 
         Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);
 
         Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);
@@ -87,19 +96,19 @@ public class Controller extends MainController implements Initializable {
         List<Book> RD = new ArrayList<>();
 
         Book Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);
 
         Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);
 
         Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);

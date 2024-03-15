@@ -1,5 +1,6 @@
 package com.example.demo1.Book;
 
+import com.example.demo1.Login.getData;
 import com.example.demo1.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,13 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
+import java.sql.*;
 import java.util.Date;
 import java.util.Optional;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.Alert;
@@ -39,22 +39,19 @@ public class PurchaseController extends MainController implements Initializable 
     private ComboBox<?> purchase_bookTitle;
 
     @FXML
-    private TableColumn<?, ?> purchase_col_author;
+    private TableColumn<customerData, String> purchase_col_bookID;
 
     @FXML
-    private TableColumn<?, ?> purchase_col_bookID;
+    private TableColumn<customerData, String> purchase_col_bookTitle;
 
     @FXML
-    private TableColumn<?, ?> purchase_col_bookTitle;
+    private TableColumn<customerData, String> purchase_col_author;
 
     @FXML
-    private TableColumn<?, ?> purchase_col_genre;
+    private TableColumn<customerData, String> purchase_col_quantity;
 
     @FXML
-    private TableColumn<?, ?> purchase_col_price;
-
-    @FXML
-    private TableColumn<?, ?> purchase_col_quantity;
+    private TableColumn<customerData, String> purchase_col_price;
 
     @FXML
     private AnchorPane purchase_form;
@@ -67,12 +64,6 @@ public class PurchaseController extends MainController implements Initializable 
 
     @FXML
     private Label purchase_info_bookTItle;
-
-    @FXML
-    private Label purchase_info_date;
-
-    @FXML
-    private Label purchase_info_genre;
 
     @FXML
     private Button purchase_payBtn;
@@ -92,12 +83,21 @@ public class PurchaseController extends MainController implements Initializable 
     private ResultSet result;
     private Statement statement;
     private int customerId;
+    
+    private static Connection connectDb(){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book", "root", "pass"); // address, database username, database password
+            return connect;
+        }catch(Exception e){e.printStackTrace();}
+        return null;
+    }
 
     public void purchasecustomerId(){
 
         String sql = "SELECT MAX(customer_id) FROM customer";
         int checkCID = 0 ;
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             prepare = connect.prepareStatement(sql);
@@ -129,10 +129,10 @@ public class PurchaseController extends MainController implements Initializable 
     public void purchaseAdd(){
         purchasecustomerId();
 
-        String sql = "INSERT INTO customer (customer_id, book_id, title, author, genre, quantity, price, date) "
-                + "VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO customer (customer_id, book_id, title, author, price) "
+                + "VALUES(?,?,?,?,?)";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             Alert alert;
@@ -151,8 +151,7 @@ public class PurchaseController extends MainController implements Initializable 
                 prepare.setString(2, purchase_info_bookID.getText());
                 prepare.setString(3, purchase_info_bookTItle.getText());
                 prepare.setString(4, purchase_info_author.getText());
-                prepare.setString(5, purchase_info_genre.getText());
-                prepare.setString(6, String.valueOf(qty));
+                prepare.setString(5, String.valueOf(qty));
 
                 String checkData = "SELECT title, price FROM book WHERE title = '"
                         +purchase_bookTitle.getSelectionModel().getSelectedItem()+"'";
@@ -168,12 +167,7 @@ public class PurchaseController extends MainController implements Initializable 
 
                 totalP = (qty * priceD);
 
-                prepare.setString(7, String.valueOf(totalP));
-
-                Date date = new Date();
-                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-
-                prepare.setString(8, String.valueOf(sqlDate));
+                prepare.setString(5, String.valueOf(totalP));
 
                 prepare.executeUpdate();
 
@@ -185,10 +179,10 @@ public class PurchaseController extends MainController implements Initializable 
 
     public void purchasePay(){
 
-        String sql = "INSERT INTO customer_info (customer_id, total, date) "
-                + "VALUES(?,?,?)";
+        String sql = "INSERT INTO customer_info (customer_id, total) "
+                + "VALUES(?,?)";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             Alert alert;
@@ -210,11 +204,6 @@ public class PurchaseController extends MainController implements Initializable 
                     prepare.setString(1, String.valueOf(customerId));
                     prepare.setString(2, String.valueOf(displayTotal));
 
-                    Date date = new Date();
-                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-
-                    prepare.setString(3, String.valueOf(sqlDate));
-
                     prepare.executeUpdate();
 
                     alert = new Alert(Alert.AlertType.INFORMATION);
@@ -234,7 +223,7 @@ public class PurchaseController extends MainController implements Initializable 
 
         String sql = "SELECT SUM(price) FROM customer WHERE customer_id = '"+customerId+"'";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             prepare = connect.prepareStatement(sql);
@@ -254,7 +243,7 @@ public class PurchaseController extends MainController implements Initializable 
 
         String sql = "SELECT book_id FROM book";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             prepare = connect.prepareStatement(sql);
@@ -277,7 +266,7 @@ public class PurchaseController extends MainController implements Initializable 
         String sql = "SELECT book_id, title FROM book WHERE book_id = '"
                 +purchase_bookID.getSelectionModel().getSelectedItem()+"'";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             prepare = connect.prepareStatement(sql);
@@ -302,13 +291,11 @@ public class PurchaseController extends MainController implements Initializable 
         String sql = "SELECT * FROM book WHERE title = '"
                 +purchase_bookTitle.getSelectionModel().getSelectedItem()+"'";
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         String bookId = "";
         String title = "";
         String author = "";
-        String genre = "";
-        String date = "";
 
         try{
             prepare = connect.prepareStatement(sql);
@@ -318,15 +305,11 @@ public class PurchaseController extends MainController implements Initializable 
                 bookId = result.getString("book_id");
                 title = result.getString("title");
                 author = result.getString("author");
-                genre = result.getString("genre");
-                date = result.getString("pub_date");
             }
 
             purchase_info_bookID.setText(bookId);
             purchase_info_bookTItle.setText(title);
             purchase_info_author.setText(author);
-            purchase_info_genre.setText(genre);
-            purchase_info_date.setText(date);
 
         }catch(Exception e){e.printStackTrace();}
 
@@ -338,7 +321,7 @@ public class PurchaseController extends MainController implements Initializable 
 
         ObservableList<customerData> listData = FXCollections.observableArrayList();
 
-        connect = database.connectDb();
+        connect = connectDb();
 
         try{
             prepare  = connect.prepareStatement(sql);
@@ -351,10 +334,8 @@ public class PurchaseController extends MainController implements Initializable 
                         , result.getInt("book_id")
                         , result.getString("title")
                         , result.getString("author")
-                        , result.getString("genre")
                         , result.getInt("quantity")
-                        , result.getDouble("price")
-                        , result.getDate("date"));
+                        , result.getDouble("price"));
 
                 listData.add(customerD);
             }
@@ -370,7 +351,6 @@ public class PurchaseController extends MainController implements Initializable 
         purchase_col_bookID.setCellValueFactory(new PropertyValueFactory<>("bookId"));
         purchase_col_bookTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         purchase_col_author.setCellValueFactory(new PropertyValueFactory<>("author"));
-        purchase_col_genre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         purchase_col_quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         purchase_col_price.setCellValueFactory(new PropertyValueFactory<>("price"));
 
@@ -388,13 +368,13 @@ public class PurchaseController extends MainController implements Initializable 
     public void purhcaseQty(){
         qty = (int) purchase_quantity.getValue();
     }
-    public void initialize(URL location, ResourceBundle resources) {
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         purchaseBookId();
         purchaseBookTitle();
         purchaseShowCustomerListData();
         purchaseDisplayQTY();
         purchaseDisplayTotal();
-
     }
 }

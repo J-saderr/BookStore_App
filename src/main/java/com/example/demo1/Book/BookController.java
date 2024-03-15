@@ -35,7 +35,7 @@ public class BookController {
             System.err.println("Error loading image: " + e.getMessage());
         }
 
-        bookName.setText(book.getName());
+        bookName.setText(book.getTitle());
         author.setText(book.getAuthor());
     }
 }

@@ -34,9 +34,6 @@ import java.sql.Statement;
 public class Login implements Initializable {
 
     @FXML
-    private AnchorPane main_form;
-
-    @FXML
     private AnchorPane login_form;
 
     @FXML
@@ -129,7 +126,7 @@ public class Login implements Initializable {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect
-                    = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "pass");
+                    = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book", "root", "pass");
             return connect;
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,6 +160,8 @@ public class Login implements Initializable {
                 result = prepare.executeQuery();
 
                 if (result.next()) {
+
+                    getData.username = login_username.getText();
 
                     alert.successMessage("Successfully Login!");
                     Parent root = FXMLLoader.load(getClass().getResource("/com/example/demo1/Home.fxml"));

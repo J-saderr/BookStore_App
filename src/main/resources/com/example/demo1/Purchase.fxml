@@ -151,7 +151,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                    <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label" stylesheets="@../design/style.css" text="hi" textFill="WHITE">
                                        <font>
                                           <Font name="Arial" size="17.0" />
                                        </font>
@@ -161,7 +161,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="purchase_info_bookTItle" layoutX="108.0" layoutY="58.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                    <Label fx:id="purchase_info_bookTItle" layoutX="108.0" layoutY="58.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css" textFill="WHITE">
                                        <font>
                                           <Font name="Arial" size="17.0" />
                                        </font>
@@ -171,27 +171,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="purchase_info_author" layoutX="108.0" layoutY="87.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css" AnchorPane.topAnchor="92.0">
-                                       <font>
-                                          <Font name="Arial" size="17.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="57.0" layoutY="126.0" text="Genre:" textFill="WHITE">
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="purchase_info_genre" layoutX="108.0" layoutY="126.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css">
-                                       <font>
-                                          <Font name="Arial" size="17.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="34.0" layoutY="159.0" text="Pub Date:" textFill="WHITE">
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="purchase_info_date" layoutX="108.0" layoutY="159.0" prefHeight="20.0" prefWidth="153.0" styleClass="info-label" stylesheets="@../design/style.css">
+                                    <Label fx:id="purchase_info_author" layoutX="108.0" layoutY="87.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" stylesheets="@../design/style.css" textFill="WHITE" AnchorPane.topAnchor="92.0">
                                        <font>
                                           <Font name="Arial" size="17.0" />
                                        </font>

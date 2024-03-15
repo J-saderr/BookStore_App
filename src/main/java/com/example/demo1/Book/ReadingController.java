@@ -41,7 +41,7 @@ public class ReadingController extends MainController implements Initializable {
         List<Book> RD = new ArrayList<>();
 
         Book Book = new Book();
-        Book.setName("Pháo Đài Số");
+        Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
         Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
         RD.add(Book);

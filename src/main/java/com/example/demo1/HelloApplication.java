@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root, 1000, 800);
         stage.setTitle("BookStore!");
