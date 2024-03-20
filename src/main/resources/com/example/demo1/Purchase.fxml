@@ -32,7 +32,7 @@
                                 <Insets top="20.0" />
                             </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Top books" textFill="#a1a1a1">
+                        <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Avalable Books" textFill="#a1a1a1">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
@@ -49,12 +49,12 @@
                                 <Insets />
                             </VBox.margin>
                         </Label>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToReading" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Reading" textFill="WHITE">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToReading" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Reading" textFill="#a1a1a1">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Button>
-                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPurchase" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="#a1a1a1">
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPurchase" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Purchase" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
@@ -143,7 +143,7 @@
                                     <Font name="Arial" size="20.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="purchase_addBtn" layoutX="313.0" layoutY="26.0" mnemonicParsing="false" onAction="#purchaseAdd" prefHeight="37.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../design/style.css" text="Add" />
+                              <Button fx:id="purchase_addBtn" layoutX="323.0" layoutY="19.0" mnemonicParsing="false" onAction="#purchaseAdd" prefHeight="37.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../design/style.css" text="Add" />
                               <AnchorPane layoutX="492.0" prefHeight="214.0" prefWidth="299.0">
                                  <children>
                                     <Label layoutX="48.0" layoutY="23.0" text="Book ID: " textFill="WHITE">
@@ -151,7 +151,7 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label" stylesheets="@../design/style.css" text="hi" textFill="WHITE">
+                                    <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label" stylesheets="@../design/style.css" textFill="WHITE">
                                        <font>
                                           <Font name="Arial" size="17.0" />
                                        </font>
@@ -184,16 +184,16 @@
                                     <Font name="Arial" size="15.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="purchase_delBtn" layoutX="325.0" layoutY="76.0" mnemonicParsing="false" onAction="#purchaseDel" prefHeight="37.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../design/style.css" text="Delete" />
                            </children>
                         </AnchorPane>
                         <TableView fx:id="purchase_tableView" layoutX="12.0" layoutY="232.0" prefHeight="420.0" prefWidth="801.0">
                            <columns>
                               <TableColumn fx:id="purchase_col_bookID" prefWidth="75.0" text="Book ID" />
-                              <TableColumn fx:id="purchase_col_bookTitle" prefWidth="174.0" text="Book Title" />
-                              <TableColumn fx:id="purchase_col_author" minWidth="8.0" prefWidth="149.0" text="Author" />
-                              <TableColumn fx:id="purchase_col_genre" minWidth="8.0" prefWidth="186.0" text="Genre" />
-                              <TableColumn fx:id="purchase_col_quantity" minWidth="8.0" prefWidth="89.81451416015625" text="Quantity" />
-                              <TableColumn fx:id="purchase_col_price" minWidth="8.0" prefWidth="126.00006103515625" text="Price ($)" />
+                              <TableColumn fx:id="purchase_col_bookTitle" prefWidth="241.609130859375" text="Book Title" />
+                              <TableColumn fx:id="purchase_col_author" minWidth="8.0" prefWidth="189.67462158203125" text="Author" />
+                              <TableColumn fx:id="purchase_col_quantity" minWidth="8.0" prefWidth="122.56781005859375" text="Quantity" />
+                              <TableColumn fx:id="purchase_col_price" minWidth="8.0" prefWidth="170.43212890625" text="Price ($)" />
                            </columns>
                         </TableView>
                      </children>

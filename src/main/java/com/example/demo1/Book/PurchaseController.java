@@ -1,17 +1,15 @@
 package com.example.demo1.Book;
 
-import com.example.demo1.Login.getData;
 import com.example.demo1.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.sql.*;
-import java.util.Date;
 import java.util.Optional;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -376,5 +374,8 @@ public class PurchaseController extends MainController implements Initializable 
         purchaseShowCustomerListData();
         purchaseDisplayQTY();
         purchaseDisplayTotal();
+    }
+
+    public void purchaseDel(ActionEvent actionEvent) {
     }
 }

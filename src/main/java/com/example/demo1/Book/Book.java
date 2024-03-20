@@ -18,11 +18,11 @@ public class Book {
     }
 
     public String getTitle() {
-        return name;
+        return title;
     }
 
-    public void setTitle(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getImage() {
@@ -40,11 +40,11 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-    public Integer getBookid(){
+    public Integer getBookId(){
         return bookid;
     }
 
-    public void setBookid(Integer bookid) {
+    public void setBookId(Integer bookid) {
         this.bookid = bookid;
     }
 

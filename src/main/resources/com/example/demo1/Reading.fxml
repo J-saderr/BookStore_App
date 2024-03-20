@@ -27,7 +27,7 @@
                                 <Insets top="20.0" />
                             </VBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Top books" textFill="#a1a1a1">
+                        <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="238.0" styleClass="secondary-color" text="Available books" textFill="#a1a1a1">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
