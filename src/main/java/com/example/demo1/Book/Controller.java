@@ -1,13 +1,14 @@
 package com.example.demo1.Book;
 
-import com.example.demo1.MainController;
+import com.example.demo1.Controller.MainController;
 import com.example.demo1.getData;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,10 +45,9 @@ public class Controller extends MainController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Book.fxml"));
 
             try {
-                VBox vBox = fxmlLoader.load();
+                AnchorPane vBox = fxmlLoader.load();
                 BookController bookController = fxmlLoader.getController();
                 bookController.setData(book);
-
                 recentlyReadingContainer.getChildren().add(vBox);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,7 +58,7 @@ public class Controller extends MainController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Book.fxml"));
 
             try {
-                VBox vBox = fxmlLoader.load();
+                AnchorPane vBox = fxmlLoader.load();
                 BookController bookController = fxmlLoader.getController();
                 bookController.setData(book);
 
@@ -70,25 +70,34 @@ public class Controller extends MainController implements Initializable {
     }
 
     private List<Book> getrecentlyReading() {
-        List<Book> RD = new ArrayList<>();
+        List<Book> RD = FXCollections.observableArrayList();
 
-        Book Book = new Book();
-        Book.setTitle("Pháo Đài Số");
-        Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
-        RD.add(Book);
+        String sql = "SELECT * FROM book";
 
-        Book = new Book();
-        Book.setTitle("Pháo Đài Số");
-        Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
-        RD.add(Book);
+        connect = connectDb();
 
-        Book = new Book();
-        Book.setTitle("Pháo Đài Số");
-        Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
-        RD.add(Book);
+        try{
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+
+            Book bookD;
+
+            while(result.next()){
+                bookD = new Book(result.getInt("book_id")
+                        , result.getString("title")
+                        , result.getString("author")
+                        , result.getString("image")
+                        , result.getString("path")
+                        , result.getString("chapter0")
+                        , result.getString("chapter1")
+                        , result.getString("chapter2")
+                        , result.getString("chapter3")
+                        , result.getString("chapter4")
+                        , result.getString("chapter5"));
+
+                RD.add(bookD);
+            }
+        }catch(Exception e){e.printStackTrace();}
 
         return RD;
     }
@@ -98,19 +107,25 @@ public class Controller extends MainController implements Initializable {
         Book Book = new Book();
         Book.setTitle("Pháo Đài Số");
         Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
+        Book.setImage("/com/example/drawable/phao_dai_so.png");
         RD.add(Book);
 
         Book = new Book();
-        Book.setTitle("Pháo Đài Số");
-        Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
+        Book.setTitle("Thay Đổi Tí Hon Hiệu Quả Bất Ngờ");
+        Book.setAuthor("James Clear");
+        Book.setImage("/com/example/drawable/Automic-habits.jpg");
         RD.add(Book);
 
         Book = new Book();
-        Book.setTitle("Pháo Đài Số");
+        Book.setTitle("Hoả Ngục");
         Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
+        Book.setImage("/com/example/drawable/hoa-nguc-dan-brown.jpeg");
+        RD.add(Book);
+
+        Book = new Book();
+        Book.setTitle("Bầu Trời Trong Trẻo");
+        Book.setAuthor("Tái Kiến Đông Lưu");
+        Book.setImage("/com/example/drawable/Bau-troi-trong-treo.jpg");
         RD.add(Book);
 
         return RD;

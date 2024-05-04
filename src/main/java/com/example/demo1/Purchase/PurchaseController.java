@@ -1,6 +1,7 @@
-package com.example.demo1.Book;
+package com.example.demo1.Purchase;
 
-import com.example.demo1.MainController;
+import com.example.demo1.Controller.MainController;
+import com.example.demo1.getData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -61,7 +62,7 @@ public class PurchaseController extends MainController implements Initializable 
     private Label purchase_info_bookID;
 
     @FXML
-    private Label purchase_info_bookTItle;
+    private Label purchase_info_bookTitle;
 
     @FXML
     private Button purchase_payBtn;
@@ -76,20 +77,8 @@ public class PurchaseController extends MainController implements Initializable 
     private Label purchase_total;
 
     private double totalP;
-    private Connection connect;
-    private PreparedStatement prepare;
-    private ResultSet result;
     private Statement statement;
     private int customerId;
-    
-    private static Connection connectDb(){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book", "root", "pass"); // address, database username, database password
-            return connect;
-        }catch(Exception e){e.printStackTrace();}
-        return null;
-    }
 
     public void purchasecustomerId(){
 
@@ -147,7 +136,7 @@ public class PurchaseController extends MainController implements Initializable 
                 prepare = connect.prepareStatement(sql);
                 prepare.setString(1, String.valueOf(customerId));
                 prepare.setString(2, purchase_info_bookID.getText());
-                prepare.setString(3, purchase_info_bookTItle.getText());
+                prepare.setString(3, purchase_info_bookTitle.getText());
                 prepare.setString(4, purchase_info_author.getText());
                 prepare.setString(5, String.valueOf(qty));
 
@@ -306,7 +295,7 @@ public class PurchaseController extends MainController implements Initializable 
             }
 
             purchase_info_bookID.setText(bookId);
-            purchase_info_bookTItle.setText(title);
+            purchase_info_bookTitle.setText(title);
             purchase_info_author.setText(author);
 
         }catch(Exception e){e.printStackTrace();}
@@ -377,5 +366,43 @@ public class PurchaseController extends MainController implements Initializable 
     }
 
     public void purchaseDel(ActionEvent actionEvent) {
+        String sql = "DELETE FROM book WHERE book_id = '"
+                +purchase_info_bookID.getText()+"'";
+
+        connect = connectDb();
+
+        try{
+            Alert alert;
+
+            if(purchase_info_bookID.getText().isEmpty()
+                    || purchase_info_bookTitle.getText().isEmpty()
+                    || purchase_info_author.getText().isEmpty()
+                    || getData.path == null || getData.path == ""){
+                alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Please fill all blank fields");
+                alert.showAndWait();
+            }else{
+                alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure you want to DELETE Book ID: " + purchase_info_bookID.getText() + "?");
+                Optional<ButtonType> option = alert.showAndWait();
+
+                if(option.get().equals(ButtonType.OK)){
+                    statement = connect.createStatement();
+                    statement.executeUpdate(sql);
+
+                    alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Information Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successful Delete!");
+                    alert.showAndWait();
+                    
+                }
+            }
+        }catch(Exception e){e.printStackTrace();}
+
     }
 }

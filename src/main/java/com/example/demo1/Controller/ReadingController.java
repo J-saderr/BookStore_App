@@ -1,11 +1,13 @@
-package com.example.demo1.Book;
+package com.example.demo1.Controller;
 
-import com.example.demo1.MainController;
+import com.example.demo1.Book.Book;
+import com.example.demo1.Book.BookController;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +29,7 @@ public class ReadingController extends MainController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Book.fxml"));
 
             try {
-                VBox vBox = fxmlLoader.load();
+                AnchorPane vBox = fxmlLoader.load();
                 BookController bookController = fxmlLoader.getController();
                 bookController.setData(book);
 
@@ -38,13 +40,26 @@ public class ReadingController extends MainController implements Initializable {
         }
     }
     private List<Book> getMyReading() {
-        List<Book> RD = new ArrayList<>();
+        List<Book> RD = FXCollections.observableArrayList();
 
-        Book Book = new Book();
-        Book.setTitle("Pháo Đài Số");
-        Book.setAuthor("Dan Brown");
-        Book.setImage("/com/example/drawable/phao-dai-so-dan-brown.jpg");
-        RD.add(Book);
+        String sql = "SELECT * FROM book";
+
+        connect = connectDb();
+
+        try{
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+
+            Book bookD;
+
+            while(result.next()){
+                bookD = new Book(result.getString("title")
+                        , result.getString("author"), result.getString("image") );
+
+                RD.add(bookD);
+            }
+        }catch(Exception e){e.printStackTrace();}
+
         return RD;
     }
 }

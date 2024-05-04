@@ -7,77 +7,253 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Login.Login">
     <children>
         <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" styleClass="primary_color" stylesheets="@../design/style.css">
             <children>
-                <AnchorPane fx:id="login_form" layoutX="349.0" layoutY="137.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="login_form" layoutX="349.0" layoutY="137.0" prefHeight="520.0" prefWidth="312.0" styleClass="secondary-color" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="140.0">
                     <children>
-                        <Label layoutX="93.0" layoutY="86.0" text="Sign In Account" textFill="#187778">
+                        <Label layoutX="125.0" layoutY="81.0" text="Sign In Account">
                             <font>
-                                <Font name="Gill Sans MT" size="20.0" />
+                                <Font name="Helvetica Bold" size="20.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5647059082984924" green="0.3450980484485626" blue="0.29411765933036804" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Label>
-                        <TextField fx:id="login_username" layoutX="37.0" layoutY="152.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <PasswordField fx:id="login_password" layoutX="38.0" layoutY="197.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <TextField fx:id="login_showPassword" layoutX="38.0" layoutY="197.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" visible="false" />
-                        <CheckBox fx:id="login_selectShowPassword" layoutX="41.0" layoutY="234.0" mnemonicParsing="false" onAction="#showPassword" text="Show Password" />
-                        <Button fx:id="login_btn" layoutX="38.0" layoutY="278.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Login" />
+                        <TextField fx:id="login_username" layoutX="37.0" layoutY="170.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <PasswordField fx:id="login_password" layoutX="38.0" layoutY="215.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <TextField fx:id="login_showPassword" layoutX="38.0" layoutY="215.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" visible="false" />
+                        <CheckBox fx:id="login_selectShowPassword" layoutX="41.0" layoutY="252.0" mnemonicParsing="false" onAction="#showPassword" text="Show Password">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5647059082984924" green="0.3450980484485626" blue="0.29411765933036804" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="Helvetica" size="13.0" />
+                     </font></CheckBox>
+                        <Button fx:id="login_btn" layoutX="38.0" layoutY="296.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Login" />
                         <Label layoutX="103.0" layoutY="428.0" text="Register Account">
-                            <font>
-                                <Font name="Gill Sans MT" size="15.0" />
-                            </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5647059082984924" green="0.3450980484485626" blue="0.29411765933036804" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="Helvetica" size="15.0" />
+                     </font>
                         </Label>
                         <Button fx:id="login_createAccount" layoutX="37.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Create Account" />
-                        <Hyperlink fx:id="login_forgotPassword" layoutX="164.0" layoutY="229.0" onAction="#switchForm" text="Forgot Password?">
+                        <Hyperlink fx:id="login_forgotPassword" layoutX="166.0" layoutY="249.0" onAction="#switchForm" text="Forgot Password?">
                             <font>
-                                <Font size="13.0" />
+                                <Font name="Helvetica" size="13.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.75" green="0.5611110925674438" blue="0.5138888955116272" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Hyperlink>
+                  <ImageView fitHeight="139.0" fitWidth="117.0" layoutX="12.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../drawable/owl.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="signup_form" layoutX="345.0" layoutY="122.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="signup_form" layoutX="345.0" layoutY="122.0" prefHeight="520.0" prefWidth="312.0" styleClass="secondary-color" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
                     <children>
-                        <Label layoutX="88.0" layoutY="74.0" text="Sign Up Account" textFill="#187778">
+                        <Label layoutX="125.0" layoutY="69.0" text="Sign Up Account">
                             <font>
-                                <Font name="Gill Sans MT" size="20.0" />
+                                <Font name="Helvetica Bold" size="20.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5657894611358643" green="0.343315452337265" blue="0.29337233304977417" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Label>
-                        <TextField fx:id="signup_email" layoutX="39.0" layoutY="114.0" prefHeight="30.0" prefWidth="237.0" promptText="Email Address" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <TextField fx:id="signup_username" layoutX="39.0" layoutY="155.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <PasswordField fx:id="signup_password" layoutX="39.0" layoutY="197.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <PasswordField fx:id="signup_cPassword" layoutX="37.0" layoutY="240.0" prefHeight="30.0" prefWidth="237.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@../design/style.css" />
-                        <Button fx:id="signup_btn" layoutX="37.0" layoutY="294.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Sign Up" />
-                        <Label layoutX="110.0" layoutY="443.0" text="Sign In Account" textFill="WHITE">
+                        <TextField fx:id="signup_email" layoutX="43.0" layoutY="169.0" prefHeight="30.0" prefWidth="237.0" promptText="Email Address" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <TextField fx:id="signup_username" layoutX="43.0" layoutY="210.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <PasswordField fx:id="signup_password" layoutX="43.0" layoutY="252.0" prefHeight="30.0" prefWidth="237.0" promptText="Password" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <PasswordField fx:id="signup_cPassword" layoutX="41.0" layoutY="295.0" prefHeight="30.0" prefWidth="237.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@../design/style.css" />
+                        <Button fx:id="signup_btn" layoutX="41.0" layoutY="349.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Sign Up" />
+                        <Label layoutX="110.0" layoutY="443.0" text="Sign In Account">
                             <font>
-                                <Font name="Gill Sans MT" size="15.0" />
+                                <Font name="Helvetica" size="15.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5647059082984924" green="0.3450980484485626" blue="0.29411765933036804" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Label>
                         <Button fx:id="signup_loginAccount" layoutX="38.0" layoutY="476.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Login Account" />
+                  <ImageView fitHeight="139.0" fitWidth="117.0" layoutX="17.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../drawable/owl.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="forgot_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
+                <AnchorPane fx:id="forgot_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="secondary-color" visible="false" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="140.0">
                     <children>
-                        <Label layoutX="86.0" layoutY="84.0" text="Forget Password" textFill="#187778">
+                        <Label layoutX="86.0" layoutY="84.0" text="Forget Password">
                             <font>
                                 <Font name="Gill Sans MT" size="20.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5657894611358643" green="0.343315452337265" blue="0.29337233304977417" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Label>
                         <Button fx:id="forgot_proceedBtn" layoutX="38.0" layoutY="192.0" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Proceed" />
                         <Button fx:id="forgot_backBtn" layoutX="37.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Back" />
                         <TextField fx:id="forgot_username" layoutX="37.0" layoutY="141.0" prefHeight="30.0" prefWidth="237.0" promptText="Username" />
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="changePass_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="black-bg" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0">
+                <AnchorPane fx:id="changePass_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0" styleClass="secondary-color" visible="false" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0">
                     <children>
-                        <Label layoutX="86.0" layoutY="84.0" text="Forget Password" textFill="#187778">
+                        <Label layoutX="86.0" layoutY="84.0" text="Forget Password">
                             <font>
                                 <Font name="Gill Sans MT" size="20.0" />
                             </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.4901960790157318" green="0.3529411852359772" blue="0.3137255012989044" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5657894611358643" green="0.343315452337265" blue="0.29337233304977417" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                         </Label>
                         <Button fx:id="changePass_proceedBtn" layoutX="36.0" layoutY="260.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="40.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Change Password" />
                         <Button fx:id="changePass_backBtn" layoutX="37.0" layoutY="461.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="237.0" styleClass="btn" stylesheets="@../design/style.css" text="Back" />

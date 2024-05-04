@@ -1,7 +1,6 @@
-package com.example.demo1.Book;
+package com.example.demo1.Controller;
 
-import com.example.demo1.MainController;
-import com.example.demo1.getData;
+import com.example.demo1.Book.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -14,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 public class SearchingController extends MainController implements Initializable {
@@ -35,18 +33,6 @@ public class SearchingController extends MainController implements Initializable
 
     @FXML
     private TableView<Book> availableBooks_tableView;
-    private Connection connect;
-    private PreparedStatement prepare;
-    private ResultSet result;
-
-    private static Connection connectDb(){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book", "root", "pass"); // address, database username, database password
-            return connect;
-        }catch(Exception e){e.printStackTrace();}
-        return null;
-    }
 
     public ObservableList<Book> availableBooksListData(){
 

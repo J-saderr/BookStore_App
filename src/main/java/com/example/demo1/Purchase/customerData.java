@@ -1,4 +1,4 @@
-package com.example.demo1.Book;
+package com.example.demo1.Purchase;
 
 import java.util.Date;
 

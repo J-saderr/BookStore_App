@@ -1,33 +1,48 @@
-.black-bg{
-    -fx-background-color: #000000;
+.white-bg{
+    -fx-background-color: #ffffff;
 }
 
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #16a47c, #2a827b);
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #7d5a50 0.0%, #7d5a50 0.6711%, #bf8f83 100.0%);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
-    -fx-font-family: Arial;
+    -fx-font-family: Helvetica;
 }
 .btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #10ae94, #187778);
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #7d5a50 0.0%, #7d5a50 0.6711%, #bf8f83 100.0%);
 }
 
 .textfield{
-    -fx-border-coior: #000;
+    -fx-border-coior: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #7d5a50 0.0%, #7d5a50 0.6711%, #bf8f83 100.0%);
     -fx-border-width: .5px;
+    -fx-font-family: Helvetica;
 }
 
 .textfield:focused{
-    -fx-border-color: linear-gradient(to bottom right, #16a47c, #2a827b);
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #7d5a50 0.0%, #7d5a50 0.6711%, #bf8f83 100.0%);
     -fx-border-width: .8px;
+    -fx-font-family: Helvetica;
 }
 .primary_color{
-    -fx-background-color: #181818;
+    -fx-background-color: #7D5A50;
 }
 
 .secondary-color{
-    -fx-background-color: #121212;
+    -fx-background-color: #FCDEC0;
+}
+.scroll-color{
+    -fx-background-color: #fcfde9;
+}
+.chaptercolor{
+    -fx-background-color: #F9F5E7;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color:#F9F5E7;
+}
+.scroller {
+  scrollbar-color: #F5EFE6 #F5EFE6;
 }
 
 .selected{
@@ -47,10 +62,42 @@
 
 .upgrade-button{
     -fx-background-color: rgba(0,0,0,0);
-    -fx-border-color: #fff;
+    -fx-border-color: #fdfce9;
     -fx-border-radius: 50;
+}
+.lightupgrade-button{
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #7d5a50 0.0%, #7d5a50 0.6711%, #bf8f83 100.0%);
+    -fx-border-color: #fdfce9;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-background-insets: 0;
 }
 
 .scroll-pane > .viewport{
     -fx-background-color: #181818;
+}
+.frame01 {
+	-fx-background-color: #F9F5E7;
+	-fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color:#F9F5E7;
+}
+.frame2 {
+	-fx-background-color: #F9F5E7;
+}
+@font-face {
+  font-family: 'Helvetica';
+  font-weight: 100;
+  font-style: normal;
+}
+.label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Normal weight */
+  font-style: normal; /* Normal style */
+}
+
+.label.bold {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700; /* Bold weight */
 }
