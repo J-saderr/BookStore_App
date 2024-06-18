@@ -5,6 +5,7 @@ public class getData {
     public static String Bookname;
     public static String username;
     public static String path;
+    public static String description;
     public static String chapter0;
     public static String chapter1;
     public static String chapter2;

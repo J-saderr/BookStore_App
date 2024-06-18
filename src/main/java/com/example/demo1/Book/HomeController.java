@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller extends MainController implements Initializable {
+public class HomeController extends MainController implements Initializable {
 
 
     @FXML
@@ -40,7 +40,6 @@ public class Controller extends MainController implements Initializable {
         favorites = new ArrayList<>(getFavorites());
         displayUsername();
 
-//        try {
         for (Book book : recentlyReading) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Book.fxml"));
 
@@ -93,7 +92,8 @@ public class Controller extends MainController implements Initializable {
                         , result.getString("chapter2")
                         , result.getString("chapter3")
                         , result.getString("chapter4")
-                        , result.getString("chapter5"));
+                        , result.getString("chapter5")
+                        , result.getString("description"));
 
                 RD.add(bookD);
             }

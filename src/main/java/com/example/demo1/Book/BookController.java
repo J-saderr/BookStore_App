@@ -63,6 +63,7 @@ public class BookController {
             getData.detailChapter3= myBook.getChapter3();
             getData.detailChapter4= myBook.getChapter4();
             getData.detailChapter5= myBook.getChapter5();
+            getData.description =myBook.getDescription();
 
             if (path != null && !path.isEmpty()) {
                 Parent root = FXMLLoader.load(getClass().getResource(path));

@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="primary_color" stylesheets="@../design/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Book.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="primary_color" stylesheets="@../design/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Book.HomeController">
     <left>
         <VBox prefHeight="200.0" prefWidth="235.0" spacing="20.0" styleClass="primary_color" stylesheets="@../design/style.css" BorderPane.alignment="CENTER">
             <children>
@@ -33,7 +33,7 @@
                         <Font name="Helvetica Bold" size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="18.0" right="18.0" top="20.0" />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="235.0" styleClass="upgrade-button" text="Avalable Books" textFill="#d0d0d0">
@@ -48,7 +48,7 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="15.0" />
+                        <Insets left="18.0" right="18.0" top="15.0" />
                      </VBox.margin>
                   </Button>
                     </children>
@@ -172,30 +172,30 @@
         </VBox>
     </center>
    <top>
-          <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1080.0" spacing="20.0" BorderPane.alignment="CENTER">
-              <children>
-            <Pane prefHeight="70.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="78.0" fitWidth="108.0" layoutX="32.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../drawable/owl.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="107.0" layoutY="13.0" prefHeight="43.0" prefWidth="105.0" text="Book" textFill="#fcfde9">
-                     <font>
-                        <Font name="Helvetica Bold Oblique" size="26.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-                  <HBox alignment="CENTER_LEFT">
-                        </HBox>
-                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0">
-               <children>
-                  <Label fx:id="username" text="Label" textFill="#ab7a6f" />
-               </children>
-            </HBox>
-              </children>
-          </HBox>
+      <Pane prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="108.0" layoutX="32.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../drawable/owl.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="107.0" layoutY="13.0" prefHeight="43.0" prefWidth="105.0" text="Book" textFill="#fcfde9">
+               <font>
+                  <Font name="Helvetica Bold Oblique" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="username" layoutX="850.0" layoutY="21.0" prefHeight="29.0" prefWidth="75.0" text="Name" textFill="#fcfde9">
+               <font>
+                  <Font name="Helvetica Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="50.0" styleClass="upgrade-button" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="937.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../drawable/Logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </top>
 </BorderPane>

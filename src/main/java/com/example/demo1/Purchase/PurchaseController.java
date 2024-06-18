@@ -75,10 +75,17 @@ public class PurchaseController extends MainController implements Initializable 
 
     @FXML
     private Label purchase_total;
+    @FXML
+    private Label username;
 
     private double totalP;
     private Statement statement;
     private int customerId;
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
+    }
 
     public void purchasecustomerId(){
 
@@ -140,7 +147,7 @@ public class PurchaseController extends MainController implements Initializable 
                 prepare.setString(4, purchase_info_author.getText());
                 prepare.setString(5, String.valueOf(qty));
 
-                String checkData = "SELECT title, price FROM book WHERE title = '"
+                String checkData = "SELECT title, price FROM AllBook WHERE title = '"
                         +purchase_bookTitle.getSelectionModel().getSelectedItem()+"'";
 
                 double priceD = 0;
@@ -228,7 +235,7 @@ public class PurchaseController extends MainController implements Initializable 
 
     public void purchaseBookId(){
 
-        String sql = "SELECT book_id FROM book";
+        String sql = "SELECT book_id FROM AllBook";
 
         connect = connectDb();
 
@@ -250,7 +257,7 @@ public class PurchaseController extends MainController implements Initializable 
 
     public void purchaseBookTitle(){
 
-        String sql = "SELECT book_id, title FROM book WHERE book_id = '"
+        String sql = "SELECT book_id, title FROM AllBook WHERE book_id = '"
                 +purchase_bookID.getSelectionModel().getSelectedItem()+"'";
 
         connect = connectDb();
@@ -275,7 +282,7 @@ public class PurchaseController extends MainController implements Initializable 
 
     public void purchaseBookInfo(){
 
-        String sql = "SELECT * FROM book WHERE title = '"
+        String sql = "SELECT * FROM AllBook WHERE title = '"
                 +purchase_bookTitle.getSelectionModel().getSelectedItem()+"'";
 
         connect = connectDb();
@@ -363,10 +370,11 @@ public class PurchaseController extends MainController implements Initializable 
         purchaseShowCustomerListData();
         purchaseDisplayQTY();
         purchaseDisplayTotal();
+        displayUsername();
     }
 
     public void purchaseDel(ActionEvent actionEvent) {
-        String sql = "DELETE FROM book WHERE book_id = '"
+        String sql = "DELETE FROM AllBook WHERE book_id = '"
                 +purchase_info_bookID.getText()+"'";
 
         connect = connectDb();

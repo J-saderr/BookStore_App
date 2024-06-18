@@ -2,6 +2,7 @@ package com.example.demo1.Book;
 
 import com.example.demo1.Controller.MainController;
 import com.example.demo1.getData;
+import com.jfoenix.controls.JFXTextArea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +11,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ContentController extends MainController implements Initializable {
@@ -20,14 +23,31 @@ public class ContentController extends MainController implements Initializable {
     private Label nameOfBook;
     private Scene scene;
     private Stage stage;
+    @FXML
+    private JFXTextArea description;
+    @FXML
+    private Label username;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         displayName();
+        displayDescription();
+        displayUsername();
+    }
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
     }
     public void displayName(){
         String name = getData.Bookname;
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
         nameOfBook.setText(name);
+    }
+
+    public void displayDescription(){
+        String descriptions = getData.description;
+        descriptions =descriptions.substring(0, 1).toUpperCase() + descriptions.substring(1);
+        description.setText(descriptions);
     }
     @FXML
     void Chapter0(ActionEvent event) throws Exception{

@@ -135,7 +135,7 @@
                         <Font name="Helvetica Bold" size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="18.0" right="18.0" top="20.0" />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="235.0" styleClass="upgrade-button" text="Avalable Books" textFill="#d0d0d0">
@@ -150,7 +150,7 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="15.0" />
+                        <Insets left="18.0" right="18.0" top="15.0" />
                      </VBox.margin>
                   </Button>
                </children>
@@ -207,6 +207,17 @@
                   <Font name="Helvetica Bold Oblique" size="26.0" />
                </font>
             </Label>
+            <Label fx:id="username" layoutX="850.0" layoutY="21.0" prefHeight="29.0" prefWidth="75.0" text="Name" textFill="#fcfde9">
+               <font>
+                  <Font name="Helvetica Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="50.0" styleClass="upgrade-button" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="937.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../drawable/Logout.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </top>

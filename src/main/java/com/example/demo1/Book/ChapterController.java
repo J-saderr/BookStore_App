@@ -19,11 +19,19 @@ public class ChapterController extends MainController implements Initializable {
 
     @FXML
     private TextArea chapterDetail;
+    @FXML
+    private Label username;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         displayName();
+        displayUsername();
         displayChapterName();
         displayChapterDetail();
+    }
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
     }
     public void displayName(){
         String name = getData.Bookname;

@@ -127,11 +127,11 @@
                      <children>
                         <Pane prefHeight="502.0" prefWidth="1121.0" styleClass="chaptercolor" stylesheets="@../design/style.css">
                            <children>
-                              <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="473.0" prefWidth="1073.0" styleClass="chaptercolor">
+                              <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="473.0" prefWidth="622.0" styleClass="chaptercolor">
                                  <content>
-                                    <AnchorPane prefHeight="471.0" prefWidth="1071.0" styleClass="frame2">
+                                    <AnchorPane prefHeight="471.0" prefWidth="648.0" styleClass="frame2">
                                        <children>
-                                          <JFXTextArea fx:id="chapterDetail" depthTest="DISABLE" editable="false" focusColor="#405aa800" layoutX="27.0" layoutY="25.0" prefHeight="421.0" prefWidth="1021.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis aenean et tortor at. Lorem donec massa sapien faucibus et molestie ac feugiat. Quisque non tellus orci ac auctor augue mauris. Tortor id aliquet lectus proin. Pharetra vel turpis nunc eget lorem dolor sed. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Euismod elementum nisi quis eleifend quam adipiscing. Ut tellus elementum sagittis vitae et leo duis ut diam. Donec adipiscing tristique risus nec. Enim nulla aliquet porttitor lacus luctus. Maecenas ultricies mi eget mauris pharetra et ultrices. Arcu dictum varius duis at consectetur lorem donec massa sapien. Et magnis dis parturient montes nascetur. Vel turpis nunc eget lorem dolor sed viverra.&#10;&#10;Tristique senectus et netus et malesuada fames. Ut placerat orci nulla pellentesque. Mauris pharetra et ultrices neque ornare. Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat. Dictum non consectetur a erat. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Urna neque viverra justo nec ultrices dui sapien. Id neque aliquam vestibulum morbi blandit cursus risus at. Pulvinar elementum integer enim neque volutpat. Id eu nisl nunc mi ipsum. A cras semper auctor neque vitae tempus quam pellentesque. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Elit sed vulputate mi sit. Eget lorem dolor sed viverra ipsum nunc. Augue lacus viverra vitae congue eu consequat ac. Tortor condimentum lacinia quis vel eros donec ac. Egestas maecenas pharetra convallis posuere morbi leo.&#10;&#10;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis aenean et tortor at. Lorem donec massa sapien faucibus et molestie ac feugiat. Quisque non tellus orci ac auctor augue mauris. Tortor id aliquet lectus proin. Pharetra vel turpis nunc eget lorem dolor sed. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Euismod elementum nisi quis eleifend quam adipiscing. Ut tellus elementum sagittis vitae et leo duis ut diam. Donec adipiscing tristique risus nec. Enim nulla aliquet porttitor lacus luctus. Maecenas ultricies mi eget mauris pharetra et ultrices. Arcu dictum varius duis at consectetur lorem donec massa sapien. Et magnis dis parturient montes nascetur. Vel turpis nunc eget lorem dolor sed viverra.&#10;&#10;Tristique senectus et netus et malesuada fames. Ut placerat orci nulla pellentesque. Mauris pharetra et ultrices neque ornare. Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat. Dictum non consectetur a erat. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Urna neque viverra justo nec ultrices dui sapien. Id neque aliquam vestibulum morbi blandit cursus risus at. Pulvinar elementum integer enim neque volutpat. Id eu nisl nunc mi ipsum. A cras semper auctor neque vitae tempus quam pellentesque. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Elit sed vulputate mi sit. Eget lorem dolor sed viverra ipsum nunc. Augue lacus viverra vitae congue eu consequat ac. Tortor condimentum lacinia quis vel eros donec ac. Egestas maecenas pharetra convallis posuere morbi leo." unFocusColor="#4d4d4d00">
+                                          <JFXTextArea fx:id="chapterDetail" depthTest="DISABLE" editable="false" focusColor="#405aa800" layoutX="27.0" layoutY="25.0" prefHeight="421.0" prefWidth="596.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis aenean et tortor at. Lorem donec massa sapien faucibus et molestie ac feugiat. Quisque non tellus orci ac auctor augue mauris. Tortor id aliquet lectus proin. Pharetra vel turpis nunc eget lorem dolor sed. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Euismod elementum nisi quis eleifend quam adipiscing. Ut tellus elementum sagittis vitae et leo duis ut diam. Donec adipiscing tristique risus nec. Enim nulla aliquet porttitor lacus luctus. Maecenas ultricies mi eget mauris pharetra et ultrices. Arcu dictum varius duis at consectetur lorem donec massa sapien. Et magnis dis parturient montes nascetur. Vel turpis nunc eget lorem dolor sed viverra.&#10;&#10;Tristique senectus et netus et malesuada fames. Ut placerat orci nulla pellentesque. Mauris pharetra et ultrices neque ornare. Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat. Dictum non consectetur a erat. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Urna neque viverra justo nec ultrices dui sapien. Id neque aliquam vestibulum morbi blandit cursus risus at. Pulvinar elementum integer enim neque volutpat. Id eu nisl nunc mi ipsum. A cras semper auctor neque vitae tempus quam pellentesque. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Elit sed vulputate mi sit. Eget lorem dolor sed viverra ipsum nunc. Augue lacus viverra vitae congue eu consequat ac. Tortor condimentum lacinia quis vel eros donec ac. Egestas maecenas pharetra convallis posuere morbi leo.&#10;&#10;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis aenean et tortor at. Lorem donec massa sapien faucibus et molestie ac feugiat. Quisque non tellus orci ac auctor augue mauris. Tortor id aliquet lectus proin. Pharetra vel turpis nunc eget lorem dolor sed. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Euismod elementum nisi quis eleifend quam adipiscing. Ut tellus elementum sagittis vitae et leo duis ut diam. Donec adipiscing tristique risus nec. Enim nulla aliquet porttitor lacus luctus. Maecenas ultricies mi eget mauris pharetra et ultrices. Arcu dictum varius duis at consectetur lorem donec massa sapien. Et magnis dis parturient montes nascetur. Vel turpis nunc eget lorem dolor sed viverra.&#10;&#10;Tristique senectus et netus et malesuada fames. Ut placerat orci nulla pellentesque. Mauris pharetra et ultrices neque ornare. Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat. Dictum non consectetur a erat. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Urna neque viverra justo nec ultrices dui sapien. Id neque aliquam vestibulum morbi blandit cursus risus at. Pulvinar elementum integer enim neque volutpat. Id eu nisl nunc mi ipsum. A cras semper auctor neque vitae tempus quam pellentesque. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Elit sed vulputate mi sit. Eget lorem dolor sed viverra ipsum nunc. Augue lacus viverra vitae congue eu consequat ac. Tortor condimentum lacinia quis vel eros donec ac. Egestas maecenas pharetra convallis posuere morbi leo." unFocusColor="#4d4d4d00">
                                              <font>
                                                 <Font name="Helvetica" size="15.0" />
                                              </font>
@@ -156,22 +156,6 @@
             </children>
         </VBox>
     </center>
-   <top>
-      <Pane prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="78.0" fitWidth="108.0" layoutX="32.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../drawable/owl.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="107.0" layoutY="13.0" prefHeight="43.0" prefWidth="105.0" text="Book" textFill="#fcfde9">
-               <font>
-                  <Font name="Helvetica Bold Oblique" size="26.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-   </top>
    <left>
       <VBox prefHeight="200.0" prefWidth="235.0" spacing="20.0" styleClass="primary_color" stylesheets="@../design/style.css" BorderPane.alignment="CENTER">
          <children>
@@ -189,7 +173,7 @@
                         <Font name="Helvetica Bold" size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="18.0" right="18.0" top="20.0" />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#switchToTopBooks" prefHeight="44.0" prefWidth="235.0" styleClass="upgrade-button" text="Avalable Books" textFill="#d0d0d0">
@@ -204,7 +188,7 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="15.0" />
+                        <Insets left="18.0" right="18.0" top="15.0" />
                      </VBox.margin>
                   </Button>
                </children>
@@ -248,4 +232,31 @@
          </children>
       </VBox>
    </left>
+   <top>
+      <Pane prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="108.0" layoutX="32.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../drawable/owl.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="107.0" layoutY="13.0" prefHeight="43.0" prefWidth="105.0" text="Book" textFill="#fcfde9">
+               <font>
+                  <Font name="Helvetica Bold Oblique" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="username" layoutX="850.0" layoutY="21.0" prefHeight="29.0" prefWidth="75.0" text="Name" textFill="#fcfde9">
+               <font>
+                  <Font name="Helvetica Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="936.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="50.0" prefWidth="50.0" styleClass="upgrade-button" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="937.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../drawable/Logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
 </BorderPane>

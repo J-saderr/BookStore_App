@@ -2,10 +2,12 @@ package com.example.demo1.Controller;
 
 import com.example.demo1.Book.Book;
 import com.example.demo1.Book.BookController;
+import com.example.demo1.getData;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -20,9 +22,16 @@ public class ReadingController extends MainController implements Initializable {
     private HBox MyReadingContainer;
 
     List<Book> MyReading;
-
+    @FXML
+    private Label username;
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        displayUsername();
         MyReading = new ArrayList<>(getMyReading());
 
         for (Book book : MyReading) {
@@ -53,8 +62,18 @@ public class ReadingController extends MainController implements Initializable {
             Book bookD;
 
             while(result.next()){
-                bookD = new Book(result.getString("title")
-                        , result.getString("author"), result.getString("image") );
+                bookD = new Book(result.getInt("book_id")
+                        , result.getString("title")
+                        , result.getString("author")
+                        , result.getString("image")
+                        , result.getString("path")
+                        , result.getString("chapter0")
+                        , result.getString("chapter1")
+                        , result.getString("chapter2")
+                        , result.getString("chapter3")
+                        , result.getString("chapter4")
+                        , result.getString("chapter5")
+                        , result.getString("description"));
 
                 RD.add(bookD);
             }

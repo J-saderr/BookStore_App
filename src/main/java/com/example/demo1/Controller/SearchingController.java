@@ -1,12 +1,14 @@
 package com.example.demo1.Controller;
 
 import com.example.demo1.Book.Book;
+import com.example.demo1.getData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -33,11 +35,23 @@ public class SearchingController extends MainController implements Initializable
 
     @FXML
     private TableView<Book> availableBooks_tableView;
-
+    @FXML
+    private Label username;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        displayUsername();
+        availableBooksShowListData();
+        availableBooksSeach();
+    }
+    public void displayUsername(){
+        String user = getData.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
+        username.setText(user);
+    }
     public ObservableList<Book> availableBooksListData(){
 
         ObservableList<Book> listData = FXCollections.observableArrayList();
-        String sql = "SELECT * FROM book";
+        String sql = "SELECT * FROM AllBook";
 
         connect = connectDb();
 
@@ -98,10 +112,5 @@ public class SearchingController extends MainController implements Initializable
         SortedList<Book> sortList = new SortedList(filter);
         sortList.comparatorProperty().bind(availableBooks_tableView.comparatorProperty());
         availableBooks_tableView.setItems(sortList);
-    }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        availableBooksShowListData();
-        availableBooksSeach();
     }
 }

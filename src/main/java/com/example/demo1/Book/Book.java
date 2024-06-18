@@ -14,6 +14,7 @@ public class Book {
     private String chapter3;
     private String chapter4;
     private String chapter5;
+    private String description;
     public Book(int bookid, String title, String author, double price){
         this.bookid=bookid;
         this.title=title;
@@ -25,7 +26,7 @@ public class Book {
         this.author=author;
         this.image=image;
     }
-    public Book(int bookid, String title, String author, String image, String path, String chapter0,String chapter1, String chapter2, String chapter3, String chapter4, String chapter5){
+    public Book(int bookid, String title, String author, String image, String path, String chapter0,String chapter1, String chapter2, String chapter3, String chapter4, String chapter5, String description){
         this.bookid=bookid;
         this.author=author;
         this.title=title;
@@ -37,6 +38,7 @@ public class Book {
         this.chapter3=chapter3;
         this.chapter4=chapter4;
         this.chapter5=chapter5;
+        this.description=description;
     }
     public Book(){
     }
@@ -104,4 +106,9 @@ public class Book {
     public String getChapter5() {
         return chapter5;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
 }

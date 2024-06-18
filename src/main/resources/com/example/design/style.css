@@ -73,9 +73,6 @@
     -fx-background-insets: 0;
 }
 
-.scroll-pane > .viewport{
-    -fx-background-color: #181818;
-}
 .frame01 {
 	-fx-background-color: #F9F5E7;
 	-fx-border-radius: 20px;
