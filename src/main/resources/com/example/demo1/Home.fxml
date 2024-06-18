@@ -158,7 +158,7 @@
                                 </Label>
                                 <ScrollPane fitToWidth="true" minViewportHeight="270.0" prefHeight="229.0" prefWidth="1059.0" styleClass="scroller" stylesheets="@../design/style.css">
                                     <content>
-                                        <HBox fx:id="favoriteContainer" prefHeight="288.0" prefWidth="1614.0" spacing="30.0" styleClass="scroll-color" />
+                                        <HBox fx:id="availableContainer" prefHeight="288.0" prefWidth="1614.0" spacing="30.0" styleClass="scroll-color" />
                                     </content>
                                 </ScrollPane>
                             </children>

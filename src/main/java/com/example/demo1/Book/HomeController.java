@@ -23,12 +23,12 @@ public class HomeController extends MainController implements Initializable {
     private HBox recentlyReadingContainer;
 
     @FXML
-    private HBox favoriteContainer;
+    private HBox availableContainer;
     @FXML
     private Label username;
 
     List<Book> recentlyReading;
-    List<Book> favorites;
+    List<Book> available;
     public void displayUsername(){
         String user = getData.username;
         user = user.substring(0, 1).toUpperCase() + user.substring(1);
@@ -37,7 +37,7 @@ public class HomeController extends MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         recentlyReading = new ArrayList<>(getrecentlyReading());
-        favorites = new ArrayList<>(getFavorites());
+        available = new ArrayList<>(getAvailable());
         displayUsername();
 
         for (Book book : recentlyReading) {
@@ -53,7 +53,7 @@ public class HomeController extends MainController implements Initializable {
             }
         }
 
-        for (Book book : favorites) {
+        for (Book book : available) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/demo1/Book.fxml"));
 
             try {
@@ -61,7 +61,7 @@ public class HomeController extends MainController implements Initializable {
                 BookController bookController = fxmlLoader.getController();
                 bookController.setData(book);
 
-                favoriteContainer.getChildren().add(vBox);
+                availableContainer.getChildren().add(vBox);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -101,7 +101,7 @@ public class HomeController extends MainController implements Initializable {
 
         return RD;
     }
-    public List<Book> getFavorites(){
+    public List<Book> getAvailable(){
         List<Book> RD = new ArrayList<>();
 
         Book Book = new Book();
