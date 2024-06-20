@@ -1,3 +1,5 @@
+**Book App**
+
 My app concept is a comprehensive virtual book platform that begins with a user account management system. Upon launching the app, users are greeted with a login screen, prompting them to enter their credentials to access their personalized bookshelf. For new users, a straightforward account creation process is available, typically requiring an email address, password creation, and possibly an email verification step for security purposes. 
 
 Once logged in, the main interface presents two primary sections. The first is the personal bookshelf, which displays the user’s collection of books, complete with visuals such as book covers, along with titles and authors. It may also show additional information like reading progress or personal ratings. The second section is the app library, which showcases the extensive range of books available for purchase within the app. This library can be organized into various categories such as genres, popularity, new releases, or even personalized recommendations based on the user’s past reading habits. 
