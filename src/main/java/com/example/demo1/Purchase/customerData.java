@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Encapsulates essential information such as customerId, bookId, title, author, quantity, and price
+*/
 package com.example.demo1.Purchase;
 
 import java.util.Date;

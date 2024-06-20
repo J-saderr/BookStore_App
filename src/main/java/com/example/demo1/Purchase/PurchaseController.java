@@ -1,3 +1,8 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Initializes the controller, username, setting up initial states and loading necessary data
+Help users purchasing book in the app lib with correct id
+*/
 package com.example.demo1.Purchase;
 
 import com.example.demo1.Controller.MainController;

@@ -1,5 +1,11 @@
-package com.example.demo1.Book;
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Display the recentlyReading and available lists by calling getrecentlyReading and getAvailable, respectively, and then displays the username by calling displayUsername
+*/
+package com.example.demo1.Controller;
 
+import com.example.demo1.Book.Book;
+import com.example.demo1.Book.BookController;
 import com.example.demo1.Controller.MainController;
 import com.example.demo1.getData;
 import javafx.collections.FXCollections;

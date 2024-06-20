@@ -1,9 +1,9 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Controller for managing user authentication and account management tasks
+*/
+
 package com.example.demo1.Login;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -29,10 +29,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- *
- * @author WINDOWS 10
- */
 public class Login implements Initializable {
 
     @FXML

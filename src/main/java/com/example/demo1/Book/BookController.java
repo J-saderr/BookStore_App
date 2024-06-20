@@ -1,3 +1,8 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+ Loads the book’s image, sets the title and author labels, and handles any exceptions if the image can’t be loaded
+ Transfers data like book ID and chapters to another class (getData) before switching scenes
+ */
 package com.example.demo1.Book;
 
 import com.example.demo1.Book.Book;

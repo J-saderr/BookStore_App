@@ -17,7 +17,10 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Handles the display of the book's name, description, and allows navigation to different chapters
+*/
 public class ContentController extends MainController implements Initializable {
     @FXML
     private Label nameOfBook;

@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Central controller to manage scene transitions and database connectivity
+*/
 package com.example.demo1.Controller;
 
 import javafx.event.ActionEvent;

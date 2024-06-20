@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Designed to store and provide easy access to shared static data related to books and user information
+*/
 package com.example.demo1;
 
 public class getData {

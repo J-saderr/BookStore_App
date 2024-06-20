@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+ Handles the display of the book's name, description, chapter name and allows navigation to different details
+ */
 package com.example.demo1.Book;
 
 import com.example.demo1.Controller.MainController;

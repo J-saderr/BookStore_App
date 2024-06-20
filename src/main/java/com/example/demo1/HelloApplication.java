@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Creating a scene with this layout, and then setting up the stage (window) with a title and displaying it
+*/
 package com.example.demo1;
 
 import javafx.application.Application;

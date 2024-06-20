@@ -1,3 +1,8 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+ Representing books with properties like ID, title, author, and price.
+ It includes several constructors for creating book objects with varying levels of detail, from basic information to full descriptions including chapters. The class also provides getter and setter methods for accessing and updating these properties
+ */
 package com.example.demo1.Book;
 
 public class Book {

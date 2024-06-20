@@ -1,3 +1,7 @@
+/* Name: Vo Nguyen Thanh Thao_ITDSIU22144
+ Purpose:
+Show alert message for login
+*/
 package com.example.demo1.Login;
 
 import javafx.scene.control.Alert;
