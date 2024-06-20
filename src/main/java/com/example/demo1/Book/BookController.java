@@ -5,7 +5,6 @@
  */
 package com.example.demo1.Book;
 
-import com.example.demo1.Book.Book;
 import com.example.demo1.getData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

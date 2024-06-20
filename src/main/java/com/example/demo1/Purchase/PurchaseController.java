@@ -128,8 +128,8 @@ public class PurchaseController extends MainController implements Initializable 
     public void purchaseAdd(){
         purchasecustomerId();
 
-        String sql = "INSERT INTO customer (customer_id, book_id, title, author, price) "
-                + "VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO customer (customer_id, book_id, title, author, quantity, price) "
+                + "VALUES(?,?,?,?,?,?)";
 
         connect = connectDb();
 
@@ -146,11 +146,11 @@ public class PurchaseController extends MainController implements Initializable 
             }else{
 
                 prepare = connect.prepareStatement(sql);
-                prepare.setString(1, String.valueOf(customerId));
+                prepare.setInt(1, customerId);
                 prepare.setString(2, purchase_info_bookID.getText());
                 prepare.setString(3, purchase_info_bookTitle.getText());
                 prepare.setString(4, purchase_info_author.getText());
-                prepare.setString(5, String.valueOf(qty));
+                prepare.setInt(5, qty);
 
                 String checkData = "SELECT title, price FROM AllBook WHERE title = '"
                         +purchase_bookTitle.getSelectionModel().getSelectedItem()+"'";
@@ -166,7 +166,7 @@ public class PurchaseController extends MainController implements Initializable 
 
                 totalP = (qty * priceD);
 
-                prepare.setString(5, String.valueOf(totalP));
+                prepare.setInt(6, (int) totalP);
 
                 prepare.executeUpdate();
 
@@ -210,6 +210,13 @@ public class PurchaseController extends MainController implements Initializable 
                     alert.setHeaderText(null);
                     alert.setContentText("Successful!");
                     alert.showAndWait();
+
+                    purchase_info_bookID.setText("");
+                    purchase_info_bookTitle.setText("");
+                    purchase_info_author.setText("");
+
+                    purchaseShowCustomerListData();
+                    purchaseDisplayTotal();
                 }
             }
         }catch(Exception e){e.printStackTrace();}
@@ -379,43 +386,45 @@ public class PurchaseController extends MainController implements Initializable 
     }
 
     public void purchaseDel(ActionEvent actionEvent) {
-        String sql = "DELETE FROM AllBook WHERE book_id = '"
-                +purchase_info_bookID.getText()+"'";
+        String bookIdToDelete = purchase_info_bookID.getText();
+
+        if (bookIdToDelete.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a book to delete.");
+            alert.showAndWait();
+            return;
+        }
+
+        String sql = "DELETE FROM customer WHERE book_id = ?";
 
         connect = connectDb();
 
-        try{
-            Alert alert;
+        try {
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, bookIdToDelete);
+            prepare.executeUpdate();
 
-            if(purchase_info_bookID.getText().isEmpty()
-                    || purchase_info_bookTitle.getText().isEmpty()
-                    || purchase_info_author.getText().isEmpty()
-                    || getData.path == null || getData.path == ""){
-                alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Please fill all blank fields");
-                alert.showAndWait();
-            }else{
-                alert = new Alert(AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Message");
-                alert.setHeaderText(null);
-                alert.setContentText("Are you sure you want to DELETE Book ID: " + purchase_info_bookID.getText() + "?");
-                Optional<ButtonType> option = alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Book ID: " + bookIdToDelete + " successfully deleted!");
+            alert.showAndWait();
 
-                if(option.get().equals(ButtonType.OK)){
-                    statement = connect.createStatement();
-                    statement.executeUpdate(sql);
+            purchase_info_bookID.setText("");
+            purchase_info_bookTitle.setText("");
+            purchase_info_author.setText("");
 
-                    alert = new Alert(AlertType.INFORMATION);
-                    alert.setTitle("Information Message");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Successful Delete!");
-                    alert.showAndWait();
-                    
-                }
-            }
-        }catch(Exception e){e.printStackTrace();}
-
+            purchaseShowCustomerListData();
+            purchaseDisplayTotal();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Error deleting the book.");
+            alert.showAndWait();
+        }
     }
 }
