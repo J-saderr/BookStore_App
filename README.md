@@ -7,6 +7,9 @@ A crucial feature of your app is the search functionality, which allows users to
 Finally, there’s a dedicated purchase section where users can complete transactions to buy books they’re interested in. This section is responsible for handling payments and ensuring that newly acquired books are added to the user’s personal bookshelf for immediate access.
 
 How to run the app:
+
 Step 1: Downloading javafx(sdk21) library then set folder Lib as root
+
 Step 2: Connecting to Mysql(Mysql is broken so I can not upload the sql file)
+
 Step 3: Running the app
